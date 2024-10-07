@@ -1,2 +1,2 @@
-print('this is new')
-print('got this far')
+import numpy as np
+import matplotlib.pyplot as plt
