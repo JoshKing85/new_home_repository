@@ -1,0 +1,28 @@
+num_list = []
+for i in range(10):
+    num_list.append(i)
+
+char_num = ord('a')
+
+alp_list = []
+
+for i in range(10):
+   alp_list.append(chr(char_num))
+   char_num += 1
+   
+
+my_dict = dict(zip(num_list, alp_list))
+print(my_dict)
+
+
+duplicate_list = [1, 2, 2, 3, 4, 4, 5]
+
+def remove_duplicates(list):
+    set_one = set(list)
+    ret_list = list(set_one)
+    return ret_list
+
+
+print(remove_duplicates(duplicate_list))
+
+
