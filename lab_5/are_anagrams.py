@@ -6,18 +6,18 @@ The funtion will then return a boolean value.
 '''
 
 def are_anagrams(first_string, sec_string):
-    is_anagram = True   
+     
     
     if len(first_string) != len(sec_string):
         
         is_anagram = False
         
-
     else:
-        for i in first_string:
-            if i not in sec_string:
-                is_anagram = False
-                break
+        
+        if sorted(first_string) == sorted(sec_string):
+            is_anagram = True
+        else:
+            is_anagram = False
     
     return is_anagram
 '''
@@ -33,6 +33,7 @@ right and grith are anagrams.
 wrong and groown are not anagrams.
 error and rarer are not anagrams.
 
+'''
 '''
 # 1st pair
 if are_anagrams('right', 'grith'):
@@ -56,3 +57,8 @@ if are_anagrams('error', 'rarer'):
 
 else:
     print('error and rarer are not anagrams.')
+'''
+assert are_anagrams("listen", "silent") == True
+assert are_anagrams("hello", "world") == False
+assert are_anagrams("triangle", "integral") == True
+assert are_anagrams("silenn", "siilen") == False
