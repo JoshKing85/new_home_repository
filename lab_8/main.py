@@ -1,4 +1,5 @@
 from managing_files import *
+from csv_files import *
 
 if __name__ == "__main__":
 
@@ -27,4 +28,13 @@ if __name__ == "__main__":
     #word_count = count_words('temp.txt', 'this')
     #print(word_count)
 
-    triangle('tri.txt', 3)
+   # triangle('tri.txt', 3)
+
+    data = [['Josh', 30, 'male'],
+            ['Jack', 45, 'male'],
+            ['Kenna', 18, 'female'],
+            ['Marie', 40, 'female']]
+    
+    create_csv('data_file.csv', data)
+
+    
