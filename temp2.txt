@@ -1,0 +1,2 @@
+first line of temp2.
+copied from temp1.

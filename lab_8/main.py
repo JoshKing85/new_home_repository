@@ -1,11 +1,14 @@
 from managing_files import *
+from copy_contents import *
 from csv_files import *
 
 if __name__ == "__main__":
 
 
     # Create and Write to a file
-    #write_to_file('temp.txt', 'Hopefully this is written into a text file.')
+    write_to_file('temp1.txt', 'copied from temp1.')
+
+    write_to_file('temp2.txt', 'first line of temp2.')
 
     
     # Append to the file
@@ -30,11 +33,13 @@ if __name__ == "__main__":
 
    # triangle('tri.txt', 3)
 
-    data = [['Josh', 30, 'male'],
-            ['Jack', 45, 'male'],
-            ['Kenna', 18, 'female'],
-            ['Marie', 40, 'female']]
+#     #data = [['Josh', 30, 'male'],
+#             ['Jack', 45, 'male'],
+#             ['Kenna', 18, 'female'],
+#             ['Marie', 40, 'female']]
     
-    create_csv('data_file.csv', data)
+    #create_csv('data_file.csv', data)
+
+    copy_contents()
 
     

@@ -54,13 +54,14 @@ def calculator(num1, num2, operator):
 def max_of_three(num1, num2, num3):
 
     if num1 >= num2:
-
+    # If selction to logically determine maximum number.
         if num1 >= 3:
             maximum = num1
 
         else: 
             maximum = num3
     
+    # If selction to logically determine maximum number.
     else:
         if num2 >= num3:
 
@@ -74,13 +75,19 @@ def max_of_three(num1, num2, num3):
 def winning_numbers(user_list, winning_list):
 
 
-    
+    # Define list with prizes indexed
     str_list = ['No', 'Third', 'Second', 'First']
 
+
+    #Convert lists to sets.
     set_list_one = set(user_list)
     set_list_two = set(winning_list)
+    
+    #Intersect to find repeating elements.
     total = set.intersection(set_list_one, set_list_two)
     prize = str_list[len(total)]
+    
+    # Length of new list equal to index of prize.
     if len(total) > 0:
         print(f'Congratulations you have won {prize} prize!')
     else:
@@ -88,40 +95,44 @@ def winning_numbers(user_list, winning_list):
     
     return prize
 
-def are_anagrams(first_string, sec_string):
+def are_anagrams(str1, str2):
      
-    
-    if len(first_string) != len(sec_string):
+    # Check lengths match
+    if len(str1) != len(str2):
         
         is_anagram = False
         
     else:
-        
-        if sorted(first_string) == sorted(sec_string):
+         # use sorted routine to rearrange strings for comparison. True if they equate
+        if sorted(str1) == sorted(str2):
             is_anagram = True
         else:
+            # Otherwise False value
             is_anagram = False
     
     return is_anagram
 
-def calculate_average(list):
+def calculate_average(numbers):
 
     total = 0
-    for i in list:
+    # Loop list to and calculate interations
+    for i in numbers:
 
         total += i
-    mean = total / len(list)
+    # Use formula for the mean avarage to find average of list. 
+    mean = total / len(numbers)
     
     return mean
 
-def calculate_weekly_pay(hours):
+def calculate_weekly_pay(hours_worked):
 
-
-    if hours <= 35:
-        wages = hours*12
+    # no overime multiply by hourly rate
+    if hours_worked <= 35:
+        wages = hours_worked*12
     
+    # Add over time hours rate to total standard rate
     else:
-        over_time = hours - 35
+        over_time = hours_worked - 35
         wages = (35*12) + (over_time*18)
     
     
@@ -130,52 +141,54 @@ def calculate_weekly_pay(hours):
 def sum_of_evens(min_value, max_value):
     
     total = 0
-    
+    # Loop difference, determine if interation is even.
     for i in range(min_value, (max_value + 1)):
         if i % 2 ==0:
             print(i)
+            # If true add to total
             total += i
            
     return total
 
-
-def is_prime(a):
+def is_prime(num):
 
 
     prime = False
-
-    if a == 1:
+    # Do not count 1 as prime.
+    if num == 1:
         return prime
     
     else:
         count = 2
-        while count < a:
-            if a % count == 0:
+        while count < num:
+            #Determine if divisible by count using modulus.
+            if num % count == 0:
                 break
 
             else:
                 count += 1
-
-    if count == a:
+    # If count is equal to num no integer other than num is a factor of num, therefore prime number.
+    if count == num:
         prime = True
 
     return prime
 
-def celsius_to_fahrenheit(cel):
+def celsius_to_fahrenheit(celsius):
 
     #formula for conversion (9/5) * C + 32   
-    fahrenheit = ((9/5)*cel) + 32   
+    fahrenheit = ((9/5)*celsius) + 32   
     
     return fahrenheit
 
-def decrypt_cypher_text(cypher, key):
+def decrypt_cypher_text(encrypted_text, key):
     
 
     new_char = ''
     plain_text = ''
     
-    for character in cypher:
-
+    for character in encrypted_text:
+        
+        # Use chr() routine inconjuction wtih ord() routine subracted by key to determine string character.
         new_char = chr(ord(character)- key)
 
         plain_text = plain_text + new_char
@@ -183,17 +196,19 @@ def decrypt_cypher_text(cypher, key):
 
     return plain_text
 
-def find_maximum_difference(list_1, list_2):
+def find_maximum_difference(a, b):
 
     
     max_diff = 0    
 
     # Initiate variable for array minumum and maxium values using min() and max() function.
-    max_1, max_2, min_1, min_2 = max(list_1), max(list_2), min(list_1), min(list_2)
+    max_1, max_2, min_1, min_2 = max(a), max(b), min(a), min(b)
     
+    # Determine difference of min, max of both lists.
     first_max = max_1 - min_2
     second_max = max_2 - min_1
 
+    #Select greatest difference.
     if first_max >= second_max:
         max_diff = first_max
 
@@ -203,13 +218,13 @@ def find_maximum_difference(list_1, list_2):
     
     return max_diff
 
-def fuel_cost(miles_travelled):
+def fuel_cost(distance_miles):
     # contants for for formula
     MPG = 50
     LITRES = 4.5
     PRICE_PER_LITRE = 1.49
 
-    f_cost = PRICE_PER_LITRE * (miles_travelled / MPG)*LITRES # Formula with constants and variable miles_travelled
+    f_cost = PRICE_PER_LITRE * (distance_miles / MPG)*LITRES # Formula with constants and variable miles_travelled
 
     return f_cost
 
@@ -229,17 +244,17 @@ def is_golden_number(n):
                 
     return is_gold 
 
-def km_to_miles(kilo):
+def km_to_miles(kilometers):
 
     # Constant conversion as directly proportionate.
     MILE_CON = 0.62
 
-    miles = kilo * MILE_CON 
+    miles = kilometers * MILE_CON 
     miles = round(miles, 3) # Library routine, round()  for decimal required.
     
     return miles
 
-def letter_occurrence(str):
+def letter_occurrence(input_string):
 
     # Ordinal for A, a.
     ord_ca, ord_a  = 65, 97
@@ -247,7 +262,7 @@ def letter_occurrence(str):
     # Set variable to be returned.
     total = 0
     
-    for char in str:
+    for char in input_string:
 
         if ord(char) == ord_ca or ord(char) == ord_a:
             
@@ -255,19 +270,19 @@ def letter_occurrence(str):
 
     return total
 
-def annual_net_income(gross):
+def annual_net_income(gross_salary):
 
 
     net = 0
     # Deductions determined from equal or greater if selections.
-    if gross >= 45000:
-        net = gross * (1 - 0.5) # All deductions use same formula (1 - n) for percentage reduction.
+    if gross_salary  >= 45000:
+        net = gross_salary  * (1 - 0.5) # All deductions use same formula (1 - n) for percentage reduction.
     
-    elif gross >= 30000:
-        net = gross * (1 - 0.3)
+    elif gross_salary  >= 30000:
+        net = gross_salary  * (1 - 0.3)
 
     else:
-        net = gross * (1 - 0.15)
+        net = gross_salary  * (1 - 0.15)
     
     return net
 
