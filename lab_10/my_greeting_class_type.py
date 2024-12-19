@@ -145,4 +145,23 @@ class Bank_Account():
 # customer_2.display_info()
     
 
+class Student():
 
+    def __init__(self, name, student_id):
+
+        self.name = name
+        self.student_id = student_id
+        self.grades = []
+    
+    def add_grades(self, grade):
+        self.grades.append(grade)
+    
+    def get_average(self):
+        self.average = sum(self.grades)/len(self.grades)
+    
+        return self.average
+    def display_info(self):
+
+        print(f'{self.student_id} {self.name} has average grades {self.get_average()}')
+    
+    
